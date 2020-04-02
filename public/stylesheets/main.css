@@ -1,0 +1,53 @@
+
+.media{
+    border: 2px solid rgb(65, 65, 65);
+    margin: 10px auto;
+}
+
+.header{
+    border: 1px solid rgb(236, 236, 236);
+    background-color: rgb(155, 155, 155);
+    box-shadow: 5px 5px 6px;
+}
+
+.content{
+   
+    background-color: white;
+}
+
+.fa{
+    color: grey;
+}
+
+button{
+    background-color: white;
+    border: 0;
+}
+
+.top{
+    width: 100%;
+    height: 200px;
+    background-color: #23A036;
+    margin-bottom: 5px;
+    padding-top: 8%;
+}
+
+.h1{
+    color: rgb(250, 250, 250);
+   
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 3vw;
+}
+
+.add-task{
+    color: rgb(250, 250, 250);
+    font-family: 'Playfair Display', serif;
+    font-size: 2vw;
+}
+
+p{
+    font-family: 'Gotu', sans-serif;
+}
+
+

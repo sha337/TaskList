@@ -1,0 +1,63 @@
+<%- include("partials/header") %>
+
+<div class="top">
+    <div style="display: inline;">
+        <h1 class="h1 text-center">Welcome to task list</h1>
+    </div>
+    <div style="display: inline;">
+        <p class="add-task text-center">Add new task  <a href="/task/new"><i class="fa fa-plus" aria-hidden="true" style="color: white;"></i></a></p>
+    </div>
+</div>
+<div class="container">
+    <div class="row header mb-3">
+        <div class="col-md-3 col-sm-1">
+            <h4>Title</h4>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <h4>Description</h4>
+        </div>
+        <div class="col-md-1 col-sm-2">
+            <h5>Priority</h5>
+        </div>
+        <div class="col-md-2 col-sm-2">
+            <h5>Date</h5>
+        </div>
+        <div class="col-md-1 col-sm-1">
+            <h5>Edit</h5>
+        </div>
+        <div class="col-md-1 col-sm-2">
+            <h5>Delete</h5>
+        </div>
+        
+        
+    </div>
+    <% var l = task.length %>
+    <% for(var i=l-1; i>=0; i--){ %>
+        <div class="row content my-1 pt-2">
+            <div class="col-md-3 col-sm-1">
+                <p><%= task[i].title %></p>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <p><%= task[i].description %></p>
+            </div>
+            <div class="col-md-1 col-sm-2">
+                <p><%= task[i].priority %></p>
+            </div>
+            <div class="col-md-2 col-sm-2">
+                <p><%= task[i].created.toDateString() %></p>
+            </div>
+            
+            <div class="col-md-1 col-sm-1">
+                <a href="/task/<%= task[i]._id %>/edit" class="mt-2"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-md-1 col-sm-1">
+                <form id="delete" action="/task/<%= task[i]._id %>?_method=DELETE" method="POST">
+                    <button><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                </form>   
+            </div>
+        </div>
+    <% } %>
+</div>
+
+
+<%- include("partials/footer") %>
